@@ -1,0 +1,29 @@
+<!--pages/index3/index.wxml-->
+<view style="background-color: aliceblue;">
+<view style="margin-top: 20rpx;" >
+  <view class="userinfo">
+    <block wx:if="{{!hasUserInfo}}" >
+      <view class="nouserinfo">123</view>
+      <button wx:if="{{canIgetUserProfile}}" bindtap="getUserProfile"  style="background-color: rgba(240, 248, 255, 0); color: #cdcdcd;margin-left: -25rpx;font-size: medium;" size="mini">授权登录</button>
+     <button wx:else  open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="button">授权登录</button>
+    </block>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+</view>
+<view class="Bar">
+ <view class="bar">关于我们
+   <navigator url="/pages/our/our" hover-class="none">
+ <image src="/images/arrow.png" style="height: 30rpx;width: 30rpx;margin-left: 450rpx;"></image>
+    </navigator>
+ </view>
+ <view class="bar2">本地设置
+  <navigator url="/pages/set/set" hover-class="none">
+ <image src="/images/arrow.png" style="height: 30rpx;width: 30rpx;margin-left: 450rpx;"></image>
+    </navigator>
+</view>
+</view>
+<view style="margin-bottom: 600rpx;"/>
+</view>

@@ -1,0 +1,27 @@
+<!--pages/index1/index.wxml-->
+<view style="background-color: aliceblue; margin-bottom: 0%;">
+<view style="margin-left: 10rpx;margin-right: 10rpx;">您所在的地理位置为：</view>
+<view style="margin-left: 10rpx;margin-right: 10rpx;">北纬{{latitude}},东经{{longitude}}</view>
+<view style="margin-right: 10rpx;margin-left: 10rpx;" >天气： {{weatherInfo}}</view>
+<view style="margin-left: 10rpx;margin-right: 10rpx;">
+<view>{{temp < -6 ? '天气极度寒冷！非必要不外出，防止感冒冻伤，如需外出务必把自己裹成粽子！' : ''}}</view>
+<view>{{temp >= -6 && temp < 2 ? '天气寒冷，穿上冬装，多喝热水' : ''}}</view>
+<view>{{temp >= 2 && temp < 10 ? '天气偏冷，可以穿上风衣，小心感冒！' : ''}}</view>
+<view>{{temp >= 10 && temp < 18 ? '今日气候凉爽，但不要穿太少，小心着凉' : ''}}</view>
+<view>{{temp >= 18 && temp < 26 ? '今日气温适宜，不忙的话可以出去远足，放松放松，怀抱大自然' : ''}}</view>
+<view>{{temp >= 26 && temp < 34 ? '天气炎热，穿上短袖，若要外出小心中暑！' : ''}}</view>
+<view>{{temp >= 34  ? '天气极度炎热！非必要不外出，防止中暑晒伤，如需外出可以尝试去马路上煎个蛋？' : ''}}</view>
+</view>
+<view style="margin-top: 30rpx;">
+  <view style="margin-left: 10rpx;">语音识别结果：</view>
+  <view class="container">
+    {{voiceTowords}}
+  </view>
+  <button type="primary" bindtouchstart="recordStart" bindtouchend="recordEnd">按住录音</button>
+  <button type="primary" bindtap="testVocal" style="margin-top: 20rpx; margin-bottom: 20rpx;">语义识别</button>
+<block wx:if="{{!hasUserprofile}}" >
+      <button wx:if="{{canIgetUserProfile}}" bindtap="signIn"  type="primary">授权登录</button>
+    </block>
+    <view style="margin-bottom: 600rpx;"/>
+</view>
+</view>

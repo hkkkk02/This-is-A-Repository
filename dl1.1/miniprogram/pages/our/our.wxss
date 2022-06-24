@@ -1,0 +1,22 @@
+/* pages/our.wxss */
+.log-list {
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx;
+  display: none;
+}
+.log-item {
+  margin: 10rpx;
+}
+.text {
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: center;
+  font-size: xx-large;
+  background: #203;
+  color: #ffc ;
+  text-shadow: 0 0 0.1em, 0 0 0.3em;
+  align-items: stretch;
+}
+page {
+  background-color: #203;
+}

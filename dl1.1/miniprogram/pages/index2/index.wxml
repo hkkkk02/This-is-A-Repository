@@ -1,0 +1,100 @@
+<!--pages/index2/index.wxml-->
+<view style="background-color: aliceblue;">
+<view style="height: 70rpx;">
+<view>{{liv1 >= 70 ? '客厅前窗开得很大' : ''}}</view>
+<view>{{liv2 >= 70 ? '客厅中窗开得很大' : ''}}</view>
+<view>{{liv3 >= 70 ? '客厅后窗开得很大' : ''}}</view>
+<view>{{kit1 >= 70 ? '厨房前窗开得很大' : ''}}</view>
+<view>{{kit2 >= 70 ? '厨房中窗开得很大' : ''}}</view>
+<view>{{kit3 >= 70 ? '厨房后窗开得很大' : ''}}</view>
+<view>{{bed1 >= 70 ? '卧室前窗开得很大' : ''}}</view>
+<view>{{bed2 >= 70 ? '卧室中窗开得很大' : ''}}</view>
+<view>{{bed3 >= 70 ? '卧室后窗开得很大' : ''}}</view>
+</view>
+<view class="container">
+  <view class="order-mes">
+    <checkbox-group class="table">
+      <view class="tr">
+        <view class="th">窗位置</view>
+        <view class="th"><checkbox checked="{{frontAll}}" value="frontAll" bindtap="selectfrontAll" data-type="front" />客厅</view>
+        <view class="th"><checkbox checked="{{middleAll}}" value="middleAll" bindtap="selectmiddleAll" data-type="middle" />厨房</view>
+        <view class="th last"><checkbox checked="{{backAll}}" value="backAll" bindtap="selectbackAll" data-type="back" />卧室</view>
+      </view>
+      <view class="tr" wx:for="{{orders}}" wx:key="id">
+        <view class="td first">
+
+          <view class="window">{{item.date.window}}</view>
+        </view>
+        <view class="td {{item.front.checked ? '' : 'gray'}}"><checkbox value="{{item.front.value}}" checked="{{item.front.checked}}" bindtap="select" data-index="{{index}}" data-type="front"  />{{item.front.checked ? '打开' : '关闭'}}</view>
+        <view class="td {{item.middle.checked ? '' : 'gray'}}"><checkbox value="{{item.middle.value}}" checked="{{item.middle.checked}}" bindtap="select" data-index="{{index}}" data-type="middle"  />{{item.middle.checked ? '打开' : '关闭'}}</view>
+        <view class="td last {{item.back.checked ? '' : 'gray'}}"><checkbox value="{{item.back.value}}" checked="{{item.back.checked}}" bindtap="select" data-index="{{index}}" data-type="back"  />{{item.back.checked ? '打开' : '关闭'}}</view>
+      </view>
+    </checkbox-group>
+  </view>
+</view>
+
+<!--客厅-->
+<button type="primary" bindtap="tapliv" style="margin-top: 20rpx;">
+客厅
+</button>
+
+<view wx:if="{{a == 1}}">
+
+<view>
+  <view>客厅前窗开启程度为{{liv1}}%</view>
+  <slider max="{{slidermax}}" step="1" bindchange="sliderChange_1" bindchanging="sliderChange_1"></slider>
+</view>
+
+<view>
+  <view>客厅中窗开启程度为{{liv2}}%</view>
+  <slider max="{{slidermax}}" step="1" bindchange="sliderChange_2" bindchanging="sliderChange_2"></slider>
+</view>
+<view>
+  <view>客厅后窗开启程度为{{liv3}}%</view>
+  <slider max="{{slidermax}}" step="1" bindchange="sliderChange_3" bindchanging="sliderChange_3"></slider>
+</view>
+</view>
+<!--厨房-->
+<button type="primary" bindtap="tapkit" style="margin-top: 20rpx;">
+厨房
+</button>
+
+<view wx:if="{{b == 1}}">
+
+<view>
+  <view>厨房前窗开启程度为{{kit1}}%</view>
+  <slider max="{{slidermax}}" step="1" bindchange="sliderChange_4" bindchanging="sliderChange_4"></slider>
+</view>
+
+<view>
+  <view>厨房中窗开启程度为{{kit2}}%</view>
+  <slider max="{{slidermax}}" step="1" bindchange="sliderChange_5" bindchanging="sliderChange_5"></slider>
+</view>
+<view>
+  <view>厨房后窗开启程度为{{kit3}}%</view>
+  <slider max="{{slidermax}}" step="1" bindchange="sliderChange_6" bindchanging="sliderChange_6"></slider>
+</view>
+</view>
+<!--卧室-->
+<button type="primary" bindtap="tapbed" style="margin-top: 20rpx;">
+卧室
+</button>
+
+<view wx:if="{{c == 1}}">
+
+<view>
+  <view>卧室前窗开启程度为{{bed1}}%</view>
+  <slider max="{{slidermax}}" step="1" bindchange="sliderChange_7" bindchanging="sliderChange_7"></slider>
+</view>
+
+<view>
+  <view>卧室中窗开启程度为{{bed2}}%</view>
+  <slider max="{{slidermax}}" step="1" bindchange="sliderChange_8" bindchanging="sliderChange_8"></slider>
+</view>
+<view>
+  <view>卧室后窗开启程度为{{bed3}}%</view>
+  <slider max="{{slidermax}}" step="1" bindchange="sliderChange_9" bindchanging="sliderChange_9"></slider>
+</view>
+</view>
+<view style="margin-bottom: 212rpx;"/>
+</view>

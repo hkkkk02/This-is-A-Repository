@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/index1/index",
+    "pages/index2/index",
+    "pages/index3/index",
+    "pages/our/our",
+    "pages/set/set"
+  ],
+  "tabBar": {
+    "selectedColor": "39C5BB",
+       "color": "black",
+       "borderStyle": "white",
+    "list": [{
+      "pagePath": "pages/index1/index",
+      "text": "语音识别",
+      "iconPath": "/images/micro.jpg",
+      "selectedIconPath": "/images/micro_selected.jpg"
+    },{
+      "pagePath": "pages/index2/index",
+      "text": "手动控制",
+      "iconPath": "/images/hand.png",
+      "selectedIconPath": "/images/hand_selected.png"
+    },{
+      "pagePath": "pages/index3/index",
+      "text": "我的",
+      "iconPath": "/images/man.png",
+      "selectedIconPath": "/images/man_selected.png"
+    }]
+  },
+  "window": {
+    "backgroundColor": "#39C5BB",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#39C5BB",
+    "navigationBarTitleText": "这是一个一个导论大作业啊啊啊",
+    "navigationBarTextStyle": "black"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "小程序想获取你所在的位置信息" 
+    }
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

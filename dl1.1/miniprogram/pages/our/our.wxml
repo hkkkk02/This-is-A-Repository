@@ -1,0 +1,10 @@
+<!--pages/our.wxml-->
+<text>pages/our.wxml</text>
+<view class="text" style="margin-top: 0rpx;"><text class="text" space="emsp">这是一个小组</text></view>
+<view class="text" style="margin-top: 0rpx;"><text class="text" space="">组员：</text></view>
+<view class="text" style="margin-top: 0rpx;"><text class="text" space="">何  旷 2021210009</text></view>
+<view class="text" style="margin-top: 0rpx;"><text class="text" space="">贺子晋2021210018</text></view>
+<view class="text" style="margin-top: 0rpx;"><text class="text" space="">奚海冰2021210015</text></view>
+
+
+

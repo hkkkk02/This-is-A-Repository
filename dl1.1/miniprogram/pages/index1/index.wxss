@@ -1,0 +1,5 @@
+/* pages/index1/index.wxss */
+.container{
+height: 100rpx;
+
+}
